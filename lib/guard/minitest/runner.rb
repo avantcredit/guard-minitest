@@ -151,7 +151,7 @@ module Guard
         if cli_options.length > 0
           cmd_parts + paths + ['--'] + cli_options
         else
-          cmd_parts + paths
+          cmd_parts + paths.collect{|p| "TEST=#{p}"}
         end
       end
 
